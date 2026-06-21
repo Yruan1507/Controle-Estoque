@@ -47,5 +47,17 @@ class Database:
             )
         """)
 
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS movimentacoes (
+                numero TEXT PRIMARY KEY,
+                origem TEXT NOT NULL,
+                destino TEXT NOT NULL,
+                produto_codigo INTEGER NOT NULL,
+                produto_nome TEXT NOT NULL,
+                quantidade INTEGER NOT NULL,
+                data TEXT NOT NULL
+            )
+        """)
+        
         conexao.commit()
         conexao.close()

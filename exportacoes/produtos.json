@@ -1,0 +1,56 @@
+[
+    {
+        "codigo": 4,
+        "nome": "Monitor",
+        "quantidade": 10,
+        "preco": 800.0,
+        "estoque_minimo": 5,
+        "estoque_maximo": 15,
+        "setor": "Almoxarifado"
+    },
+    {
+        "codigo": 1,
+        "nome": "Mouse",
+        "quantidade": 0,
+        "preco": 20.0,
+        "estoque_minimo": 10,
+        "estoque_maximo": 100,
+        "setor": "Almoxarifado"
+    },
+    {
+        "codigo": 5,
+        "nome": "Cabo HDMI",
+        "quantidade": 8,
+        "preco": 32.0,
+        "estoque_minimo": 7,
+        "estoque_maximo": 10,
+        "setor": "TI"
+    },
+    {
+        "codigo": 4,
+        "nome": "Monitor",
+        "quantidade": 2,
+        "preco": 800.0,
+        "estoque_minimo": 1,
+        "estoque_maximo": 3,
+        "setor": "TI"
+    },
+    {
+        "codigo": 1,
+        "nome": "Mouse",
+        "quantidade": 1,
+        "preco": 20.0,
+        "estoque_minimo": 10,
+        "estoque_maximo": 20,
+        "setor": "TI"
+    },
+    {
+        "codigo": 2,
+        "nome": "Teclado",
+        "quantidade": 10,
+        "preco": 45.0,
+        "estoque_minimo": 5,
+        "estoque_maximo": 10,
+        "setor": "TI"
+    }
+]

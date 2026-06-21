@@ -1,0 +1,16 @@
+Instalar python;
+Instalar extensão: SQLite Viewer
+
+Verificar se está instalado: python --version
+
+Verificar se dotenv está instalado: python -m pip show python-dotenv
+
+Instalando dotenv: python -m pip install python-dotenv
+
+Instalar: python -m pip install fastapi uvicorn
+
+Instalar para sistema simulado: python -m pip install requests
+
+Basta rodar: python main.py
+
+Executar api: python -m uvicorn api:app --reload

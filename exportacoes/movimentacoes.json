@@ -1,0 +1,47 @@
+[
+    {
+        "numero": "MOV-0005",
+        "origem": "Almoxarifado",
+        "destino": "TI",
+        "produto_codigo": 1,
+        "produto_nome": "Mouse",
+        "quantidade": 1,
+        "data": "2026-06-20 22:32:53"
+    },
+    {
+        "numero": "MOV-0004",
+        "origem": "Almoxarifado",
+        "destino": "TI",
+        "produto_codigo": 1,
+        "produto_nome": "Mouse",
+        "quantidade": 1,
+        "data": "2026-06-20 22:32:49"
+    },
+    {
+        "numero": "MOV-0002",
+        "origem": "Almoxarifado",
+        "destino": "TI",
+        "produto_codigo": 1,
+        "produto_nome": "Mouse",
+        "quantidade": 10,
+        "data": "2026-06-20 22:22:42"
+    },
+    {
+        "numero": "MOV-0003",
+        "origem": "Almoxarifado",
+        "destino": "TI",
+        "produto_codigo": 1,
+        "produto_nome": "Mouse",
+        "quantidade": 20,
+        "data": "2026-06-20 22:22:42"
+    },
+    {
+        "numero": "MOV-0001",
+        "origem": "Almoxarifado",
+        "destino": "TI",
+        "produto_codigo": 1,
+        "produto_nome": "Mouse",
+        "quantidade": 18,
+        "data": "2026-06-14 16:15:48"
+    }
+]

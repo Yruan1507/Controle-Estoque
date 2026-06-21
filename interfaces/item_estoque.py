@@ -1,8 +1,14 @@
+# Importa os recursos necessários para criar uma classe abstrata
 from abc import ABC, abstractmethod
 
-
+# Classe abstrata que representa um item genérico de estoque
+# Nenhum objeto desta classe pode ser criado diretamente
+# Ela serve apenas como modelo para outras classes
 class ItemEstoque(ABC):
 
+    # Método abstrato
+    # Toda classe que herdar de ItemEstoque será obrigada a possuir este método
+    # Todo item de estoque precisa exibir usas informações - Abstração
     @abstractmethod
     def exibir_informacoes(self):
         pass

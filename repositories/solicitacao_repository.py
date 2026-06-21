@@ -61,3 +61,25 @@ class SolicitacaoRepository:
         proximo_numero = numero_inteiro + 1
 
         return f"SC-{proximo_numero:04d}"
+    
+    def listar_todas(self):
+        conexao = self.__database.conectar()
+        cursor = conexao.cursor()
+
+        cursor.execute("""
+            SELECT numero,
+                   produto_codigo,
+                   produto_nome,
+                   quantidade,
+                   fornecedor_nome,
+                   status,
+                   data_criacao
+            FROM solicitacoes_compra
+            ORDER BY data_criacao DESC
+        """)
+
+        registros = cursor.fetchall()
+
+        conexao.close()
+
+        return registros

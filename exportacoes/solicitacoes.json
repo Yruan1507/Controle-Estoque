@@ -1,0 +1,74 @@
+[
+    {
+        "numero": "SC-0008",
+        "produto_codigo": 1,
+        "produto_nome": "Mouse",
+        "quantidade": 100,
+        "fornecedor": "Yruan",
+        "status": "AGUARDANDO ORCAMENTO",
+        "data_criacao": "2026-06-20 22:40:31"
+    },
+    {
+        "numero": "SC-0007",
+        "produto_codigo": 1,
+        "produto_nome": "Mouse",
+        "quantidade": 100,
+        "fornecedor": "Yruan",
+        "status": "AGUARDANDO ORCAMENTO",
+        "data_criacao": "2026-06-20 22:32:57"
+    },
+    {
+        "numero": "SC-0006",
+        "produto_codigo": 1,
+        "produto_nome": "Mouse",
+        "quantidade": 100,
+        "fornecedor": "Yruan",
+        "status": "AGUARDANDO ORCAMENTO",
+        "data_criacao": "2026-06-20 22:32:53"
+    },
+    {
+        "numero": "SC-0005",
+        "produto_codigo": 1,
+        "produto_nome": "Mouse",
+        "quantidade": 99,
+        "fornecedor": "Yruan",
+        "status": "AGUARDANDO ORCAMENTO",
+        "data_criacao": "2026-06-20 22:32:49"
+    },
+    {
+        "numero": "SC-0004",
+        "produto_codigo": 1,
+        "produto_nome": "Mouse",
+        "quantidade": 100,
+        "fornecedor": "Yruan",
+        "status": "AGUARDANDO ORCAMENTO",
+        "data_criacao": "2026-06-14 16:11:52"
+    },
+    {
+        "numero": "SC-0003",
+        "produto_codigo": 1,
+        "produto_nome": "Mouse",
+        "quantidade": 100,
+        "fornecedor": "Yruan",
+        "status": "AGUARDANDO ORCAMENTO",
+        "data_criacao": "2026-06-12 17:05:38"
+    },
+    {
+        "numero": "SC-0002",
+        "produto_codigo": 1,
+        "produto_nome": "Mouse Logitech",
+        "quantidade": 100,
+        "fornecedor": "Yruan",
+        "status": "AGUARDANDO ORCAMENTO",
+        "data_criacao": "2026-06-12 14:56:30"
+    },
+    {
+        "numero": "SC-0001",
+        "produto_codigo": 1,
+        "produto_nome": "Mouse Logitech",
+        "quantidade": 100,
+        "fornecedor": "Yruan",
+        "status": "AGUARDANDO ORCAMENTO",
+        "data_criacao": "2026-06-12 14:42:55"
+    }
+]
