@@ -1,6 +1,8 @@
 from models.setor import Setor
 
-
+#Representa o setor que consome os materiais
+#A classe se conecta com Setor, Produto e Almoxarifado
+#Classe TI ja herda da classe Setor
 class TI(Setor):
 
     def __init__(self):
@@ -33,3 +35,5 @@ class TI(Setor):
         print("\nRelatório específico do TI")
         print("Verificando equipamentos e periféricos em estoque...")
         self.listar_produtos()
+        
+"""A classe TI representa o setor de Tecnologia da Informação da empresa. Ela herda da classe Setor, reutilizando funcionalidades comuns como cadastro, listagem e busca de produtos. Sua principal responsabilidade é verificar se algum produto está abaixo do estoque mínimo e, quando necessário, solicitar automaticamente a reposição ao Almoxarifado. Além da Herança, essa classe demonstra Polimorfismo ao sobrescrever o método gerar_relatorio, produzindo um relatório específico para o setor de TI."""

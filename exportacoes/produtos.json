@@ -1,20 +1,38 @@
 [
     {
-        "codigo": 4,
-        "nome": "Monitor",
-        "quantidade": 10,
-        "preco": 800.0,
-        "estoque_minimo": 5,
-        "estoque_maximo": 15,
-        "setor": "Almoxarifado"
-    },
-    {
         "codigo": 1,
         "nome": "Mouse",
         "quantidade": 0,
         "preco": 20.0,
         "estoque_minimo": 10,
         "estoque_maximo": 100,
+        "setor": "Almoxarifado"
+    },
+    {
+        "codigo": 8,
+        "nome": "PenDrive",
+        "quantidade": 20,
+        "preco": 50.0,
+        "estoque_minimo": 10,
+        "estoque_maximo": 30,
+        "setor": "Almoxarifado"
+    },
+    {
+        "codigo": 12,
+        "nome": "SSD 480GB",
+        "quantidade": 4,
+        "preco": 200.0,
+        "estoque_minimo": 5,
+        "estoque_maximo": 10,
+        "setor": "Almoxarifado"
+    },
+    {
+        "codigo": 11,
+        "nome": "iMac",
+        "quantidade": 0,
+        "preco": 10000.0,
+        "estoque_minimo": 1,
+        "estoque_maximo": 5,
         "setor": "Almoxarifado"
     },
     {
@@ -36,12 +54,12 @@
         "setor": "TI"
     },
     {
-        "codigo": 1,
-        "nome": "Mouse",
-        "quantidade": 1,
-        "preco": 20.0,
-        "estoque_minimo": 10,
-        "estoque_maximo": 20,
+        "codigo": 12,
+        "nome": "SSD 480GB",
+        "quantidade": 8,
+        "preco": 200.0,
+        "estoque_minimo": 5,
+        "estoque_maximo": 15,
         "setor": "TI"
     },
     {
@@ -51,6 +69,15 @@
         "preco": 45.0,
         "estoque_minimo": 5,
         "estoque_maximo": 10,
+        "setor": "TI"
+    },
+    {
+        "codigo": 11,
+        "nome": "iMac",
+        "quantidade": 2,
+        "preco": 10000.0,
+        "estoque_minimo": 1,
+        "estoque_maximo": 3,
         "setor": "TI"
     }
 ]

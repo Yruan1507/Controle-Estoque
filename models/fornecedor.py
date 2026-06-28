@@ -1,3 +1,6 @@
+# Classe que representa Fornecedor, Solicitação de Compra, E-mail, Banco
+# Se conecta com SolicitacaoCompra, EmailService, SolicitacaoRepository, Almoxarifado, Banco, Gmail
+
 # Importa a classe responsável por representar uma solicitação de compra
 # Importa o serviço responsável pelo envio de e-mails
 # Importa o repositório responsável por salvar e consultar solicitações
@@ -89,3 +92,6 @@ class Fornecedor:
 #↓
 #Envia e-mail real
 ###################################################
+
+        """A classe Fornecedor é responsável por representar o fornecedor vinculado ao Almoxarifado. Quando o estoque precisa ser reposto, ela cria uma SolicitacaoCompra, gera automaticamente o número da solicitação através do SolicitacaoRepository, salva os dados no banco SQLite e utiliza o EmailService para enviar o pedido de orçamento por e-mail. A classe também utiliza encapsulamento nos seus atributos privados e mostra a colaboração entre diferentes objetos do sistema.
+        """

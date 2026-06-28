@@ -1,4 +1,13 @@
+# A classe Almoxarifado representa o setor responsável por armazenar os produtos principais da empresa 
+# e atender solicitações de outros setores.
+
+# O QUE ELA FAZ:
+# 1. Verifica se possui o produto solicitado
+# 2. Envia produtos para o setor solicitante
+# 3. Gera solicitação de compra quando o estoque fica baixo ou insuficiente
+
 # Importa a classe Setor, que será a classe pai do Almoxarifado
+# Importa movimentacoes e movimentacao_repository
 from models.setor import Setor
 from models.movimentacoes import Movimentacao
 from repositories.movimentacao_repository import MovimentacaoRepository
@@ -13,6 +22,7 @@ class Almoxarifado(Setor):
         # Chama o construtor da classe pai Setor
         # Define o nome do setor como "Almoxarifado"
         super().__init__("Almoxarifado")
+        #Encapsulamento: acesso direto de fora da classe é bloqueado. A classe controla como esses dados são usados.
         self.__fornecedor = fornecedor
         self.__movimentacao_repository = MovimentacaoRepository()
 
@@ -28,7 +38,6 @@ class Almoxarifado(Setor):
             return
 
         # Busca o mesmo produto no setor que fez a solicitação
-        # Exemplo: busca o produto dentro do estoque do TI
         produto_setor = setor_solicitante.buscar_produto_por_codigo(codigo_produto)
 
         # Verifica se o almoxarifado possui quantidade suficiente para atender toda a solicitação
@@ -101,6 +110,7 @@ class Almoxarifado(Setor):
 
         self.__movimentacao_repository.salvar(movimentacao)
     
+    # Verifica se existe uma necessidade de compra de produto
     def verificar_necessidade_compra(self, produto):
         if produto.estoque_abaixo_minimo():
             quantidade_para_compra = produto.quantidade_para_repor()
@@ -116,8 +126,14 @@ class Almoxarifado(Setor):
             )
 
 ###############################################
-#Herança:
-#Almoxarifado herda de Setor.   
+# COM O QUE ESSA CLASSE SE CONECTA:
+# Setor: classe pai, fornece métodos como adicionar_produto, listar_produtos e buscar_produto_por_codigo.
+# Movimentacao: cria o registro da transferência.
+# MovimentacaoRepository: salva a movimentação no SQLite.
+# Fornecedor: recebe solicitação de orçamento quando precisa comprar.
+# Produto: é o item que tem quantidade, mínimo e máximo.
+
+#Herança: Almoxarifado herda da classe Setor.   
 
 #Encapsulamento:
 #O fornecedor fica privado em self.__fornecedor.
@@ -127,5 +143,12 @@ class Almoxarifado(Setor):
 
 #Regra de negócio:
 #O Almoxarifado atende o setor solicitante, envia o que possui e, se necessário,
-#gera solicitação de orçamento ao fornecedor.
+#gera solicitação de orçamento ao fornecedor, registra movimentação.
 ###############################################
+
+"""A classe Almoxarifado herda de Setor, reutilizando comportamentos comuns como cadastro, 
+busca e listagem de produtos. Ela é responsável por atender solicitações de outros setores, 
+verificar disponibilidade de estoque, registrar movimentações e acionar o fornecedor quando 
+há necessidade de reposição. Também aplica encapsulamento ao manter o fornecedor e o repositório
+de movimentações como atributos privados. Além disso, sobrescreve o método gerar_relatorio, 
+demonstrando polimorfismo."""

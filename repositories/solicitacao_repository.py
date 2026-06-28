@@ -1,3 +1,7 @@
+#Classe responsável por toda persistência de solicitação de compra
+#Responsabilidades: Salvar uma solicitação no banco, gerar próximo numero de solicitação, listar todas solicitações
+#Se conecta com: Almoxarifado, Fornecedor (esse cria a solicitação), SolicitacaoCompra, SolicitacaoRepository, Database, SQLite e usado em main, API FASTAPI, ERP Simulado, JSONExportService e ERPService
+
 from repositories.database import Database
 
 
@@ -6,6 +10,7 @@ class SolicitacaoRepository:
     def __init__(self):
         self.__database = Database()
 
+    # Salva uma solicitação de compra no banco.
     def salvar(self, solicitacao):
 
         conexao = self.__database.conectar()
@@ -39,6 +44,7 @@ class SolicitacaoRepository:
             f"Solicitação {solicitacao.get_numero()} salva no banco."
         )
 
+    # Gera automaticamente o próximo número da solicitação de compra.
     def gerar_proximo_numero(self):
         conexao = self.__database.conectar()
         cursor = conexao.cursor()
@@ -62,6 +68,7 @@ class SolicitacaoRepository:
 
         return f"SC-{proximo_numero:04d}"
     
+    # Retorna todas as solicitações cadastradas ordenadas pela data de criação.
     def listar_todas(self):
         conexao = self.__database.conectar()
         cursor = conexao.cursor()
@@ -83,3 +90,5 @@ class SolicitacaoRepository:
         conexao.close()
 
         return registros
+    
+"""A classe SolicitacaoRepository implementa a camada de persistência das solicitações de compra. Ela é responsável por gerar automaticamente a numeração das solicitações, armazenar os dados no banco SQLite e recuperar todas as solicitações cadastradas. Dessa forma, a lógica de negócio permanece nas classes Fornecedor e Almoxarifado, enquanto o acesso ao banco fica centralizado no Repository, mantendo a arquitetura organizada e com baixo acoplamento."""

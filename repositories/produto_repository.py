@@ -1,3 +1,6 @@
+#Responsável por fazer a ponte entre os objetos Produto e a tabela produtos do banco
+#Se conecta com: Produto, ProdutoRepository, Database e SQLite, usado no main, api, JSONExportService e ERPService
+
 from repositories.database import Database
 from models.produto import Produto
 
@@ -6,11 +9,12 @@ class ProdutoRepository:
 
     def __init__(self):
         self.__database = Database()
-
+    #Recebe um objeto Produto e o setor ao qual ele pertence
     def salvar(self, produto, setor):
         conexao = self.__database.conectar()
         cursor = conexao.cursor()
 
+        #Se não existir insere, senão, atualiza
         cursor.execute("""
             INSERT OR REPLACE INTO produtos (
                 codigo,
@@ -36,6 +40,7 @@ class ProdutoRepository:
 
         print(f"Produto {produto.get_nome()} salvo no banco para o setor {setor}.")
 
+    #Lista todos os produtos por setor
     def listar_por_setor(self, setor):
         conexao = self.__database.conectar()
         cursor = conexao.cursor()
@@ -65,7 +70,8 @@ class ProdutoRepository:
             produtos.append(produto)
 
         return produtos
-
+    
+    #Lista todos produtos de todos setores
     def listar_todos(self):
         conexao = self.__database.conectar()
         cursor = conexao.cursor()
@@ -88,6 +94,7 @@ class ProdutoRepository:
 
         return registros
 
+    #Atualiza quantidade de um produto específico
     def atualizar_quantidade(self, codigo, setor, nova_quantidade):
         conexao = self.__database.conectar()
         cursor = conexao.cursor()
@@ -106,20 +113,62 @@ class ProdutoRepository:
         conexao.close()
 
         print("Quantidade atualizada com sucesso.")
+        
+    def gerar_proximo_codigo(self, setor):
+        conexao = self.__database.conectar()
+        cursor = conexao.cursor()
 
-    def excluir(self, codigo, setor):
+        cursor.execute("""
+            SELECT MAX(codigo)
+            FROM produtos
+            WHERE setor = ?
+        """, (setor,))
+
+        resultado = cursor.fetchone()
+
+        conexao.close()
+
+        if resultado[0] is None:
+            return 1
+
+        return resultado[0] + 1
+    
+    #Esse método busca o maior código existente em todos os setores e soma +1
+    def gerar_proximo_codigo_geral(self):
+        conexao = self.__database.conectar()
+        cursor = conexao.cursor()
+
+        cursor.execute("""
+            SELECT MAX(codigo)
+            FROM produtos
+        """)
+
+        resultado = cursor.fetchone()
+        conexao.close()
+
+        if resultado[0] is None:
+            return 1
+
+        return resultado[0] + 1
+    
+    #Remove um produto do banco usando código e setor como referência
+    def excluir_por_codigo(self, codigo):
         conexao = self.__database.conectar()
         cursor = conexao.cursor()
 
         cursor.execute("""
             DELETE FROM produtos
-            WHERE codigo = ? AND setor = ?
-        """, (
-            codigo,
-            setor
-        ))
+            WHERE codigo = ?
+        """, (codigo,))
 
-        conexao.commit()
+        quantidade_removida = cursor.rowcount
+
+        if quantidade_removida == 0:
+            print("Produto não encontrado. Nenhum item foi removido.")
+        else:
+            conexao.commit()
+            print(f"Produto removido com sucesso dos setores. Registros removidos: {quantidade_removida}")
+
         conexao.close()
-
-        print("Produto removido com sucesso.")
+        
+"""A classe ProdutoRepository representa a camada de persistência dos produtos. Ela é responsável por salvar, consultar, atualizar e excluir produtos no banco SQLite. Essa separação evita que a classe Produto tenha comandos SQL, mantendo a regra de negócio separada do acesso ao banco. Além disso, o repository permite que o mesmo produto exista em setores diferentes, utilizando a combinação de código e setor como chave de identificação."""

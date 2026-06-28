@@ -1,5 +1,23 @@
 [
     {
+        "numero": "SC-0010",
+        "produto_codigo": 12,
+        "produto_nome": "SSD 480GB",
+        "quantidade": 6,
+        "fornecedor": "Yruan",
+        "status": "AGUARDANDO ORCAMENTO",
+        "data_criacao": "2026-06-28 17:09:56"
+    },
+    {
+        "numero": "SC-0009",
+        "produto_codigo": 11,
+        "produto_nome": "iMac",
+        "quantidade": 5,
+        "fornecedor": "Yruan",
+        "status": "AGUARDANDO ORCAMENTO",
+        "data_criacao": "2026-06-28 16:30:47"
+    },
+    {
         "numero": "SC-0008",
         "produto_codigo": 1,
         "produto_nome": "Mouse",

@@ -14,3 +14,7 @@ Instalar para sistema simulado: python -m pip install requests
 Basta rodar: python main.py
 
 Executar api: python -m uvicorn api:app --reload
+
+Excutar erp simulado: python erp_simulado.py
+
+Usando FASTApi ele ja cria uma documentação: http://127.0.0.1:8000/docs#/

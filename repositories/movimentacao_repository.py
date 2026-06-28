@@ -1,11 +1,15 @@
+#Responsável por todas as operações relacionadas às movimentações no banco de dados.
+#Responsabilidades: gerar próximo número de movimentação, salvar no banco, listar todas movimentações
+#Se conecta com: Almoxarifado, Movimentacao, Database, SQLite, API FastAPI, ERP Simulado e Exportacao JSON
+
 from repositories.database import Database
 
-
 class MovimentacaoRepository:
-
+    # Inicializa o Repository criando uma conexão com a classe Database
     def __init__(self):
         self.__database = Database()
 
+    #Consulta o banco e gera o próximo número de movimentacao
     def gerar_proximo_numero(self):
         conexao = self.__database.conectar()
         cursor = conexao.cursor()
@@ -29,6 +33,7 @@ class MovimentacaoRepository:
 
         return f"MOV-{proximo_numero:04d}"
 
+    #Método que pega um objeto movimentacao e transforma em um registro no SQLite
     def salvar(self, movimentacao):
         conexao = self.__database.conectar()
         cursor = conexao.cursor()
@@ -59,6 +64,7 @@ class MovimentacaoRepository:
 
         print(f"Movimentação {movimentacao.get_numero()} salva no banco.")
         
+    # Retorna movimentações cadastradas, ordenadas da mais recente para a mais antiga    
     def listar_todas(self):
         conexao = self.__database.conectar()
         cursor = conexao.cursor()
@@ -74,9 +80,11 @@ class MovimentacaoRepository:
             FROM movimentacoes
             ORDER BY data DESC
         """)
-
+        #fetchall = todas as linhas
         registros = cursor.fetchall()
 
         conexao.close()
 
         return registros
+    
+"""A classe MovimentacaoRepository implementa a camada de persistência das movimentações. Ela é responsável por gerar automaticamente a numeração das movimentações, salvar os registros no banco SQLite e consultar todas as movimentações cadastradas. Essa separação permite que a regra de negócio permaneça na classe Almoxarifado, enquanto o acesso ao banco fica centralizado no Repository, reduzindo o acoplamento e facilitando a manutenção do sistema."""
