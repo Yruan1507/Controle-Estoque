@@ -9,6 +9,15 @@
         "setor": "Almoxarifado"
     },
     {
+        "codigo": 14,
+        "nome": "Mousepad",
+        "quantidade": 0,
+        "preco": 15.0,
+        "estoque_minimo": 2,
+        "estoque_maximo": 10,
+        "setor": "Almoxarifado"
+    },
+    {
         "codigo": 8,
         "nome": "PenDrive",
         "quantidade": 20,
@@ -18,21 +27,21 @@
         "setor": "Almoxarifado"
     },
     {
+        "codigo": 13,
+        "nome": "Processador i3 14th",
+        "quantidade": 3,
+        "preco": 1000.0,
+        "estoque_minimo": 1,
+        "estoque_maximo": 5,
+        "setor": "Almoxarifado"
+    },
+    {
         "codigo": 12,
         "nome": "SSD 480GB",
         "quantidade": 4,
         "preco": 200.0,
         "estoque_minimo": 5,
         "estoque_maximo": 10,
-        "setor": "Almoxarifado"
-    },
-    {
-        "codigo": 11,
-        "nome": "iMac",
-        "quantidade": 0,
-        "preco": 10000.0,
-        "estoque_minimo": 1,
-        "estoque_maximo": 5,
         "setor": "Almoxarifado"
     },
     {
@@ -54,30 +63,30 @@
         "setor": "TI"
     },
     {
-        "codigo": 12,
-        "nome": "SSD 480GB",
-        "quantidade": 8,
-        "preco": 200.0,
-        "estoque_minimo": 5,
-        "estoque_maximo": 15,
-        "setor": "TI"
-    },
-    {
-        "codigo": 2,
-        "nome": "Teclado",
-        "quantidade": 10,
-        "preco": 45.0,
-        "estoque_minimo": 5,
+        "codigo": 14,
+        "nome": "Mousepad",
+        "quantidade": 4,
+        "preco": 15.0,
+        "estoque_minimo": 3,
         "estoque_maximo": 10,
         "setor": "TI"
     },
     {
-        "codigo": 11,
-        "nome": "iMac",
+        "codigo": 13,
+        "nome": "Processador i3 14th",
         "quantidade": 2,
-        "preco": 10000.0,
+        "preco": 1000.0,
         "estoque_minimo": 1,
         "estoque_maximo": 3,
+        "setor": "TI"
+    },
+    {
+        "codigo": 12,
+        "nome": "SSD 480GB",
+        "quantidade": 6,
+        "preco": 200.0,
+        "estoque_minimo": 5,
+        "estoque_maximo": 15,
         "setor": "TI"
     }
 ]

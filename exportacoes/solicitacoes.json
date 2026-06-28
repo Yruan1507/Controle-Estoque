@@ -1,5 +1,14 @@
 [
     {
+        "numero": "SC-0011",
+        "produto_codigo": 14,
+        "produto_nome": "Mousepad",
+        "quantidade": 10,
+        "fornecedor": "Yruan",
+        "status": "AGUARDANDO ORCAMENTO",
+        "data_criacao": "2026-06-28 19:40:50"
+    },
+    {
         "numero": "SC-0010",
         "produto_codigo": 12,
         "produto_nome": "SSD 480GB",
