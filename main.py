@@ -113,25 +113,6 @@ def cadastrar_produto():
 
     print("\nProduto cadastrado com sucesso nos setores TI e Almoxarifado.")
 
-#Ao cadastrar produto, verifique um código disponível automaticamente sem precisar ser manual    
-def gerar_proximo_codigo(self, setor):
-    conexao = self.__database.conectar()
-    cursor = conexao.cursor()
-
-    cursor.execute("""
-        SELECT MAX(codigo)
-        FROM produtos
-        WHERE setor = ?
-    """, (setor,))
-
-    resultado = cursor.fetchone()
-    conexao.close()
-
-    if resultado[0] is None:
-        return 1
-
-    return resultado[0] + 1
-
 # Função responsável por listar produtos de um setor específico.
 def listar_produtos():
     print("\n=== LISTAR PRODUTOS ===")
