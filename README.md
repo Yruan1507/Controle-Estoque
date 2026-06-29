@@ -8,6 +8,7 @@ Sistema de controle de estoque desenvolvido em Python com Orientação a Objetos
 * SQLite
 * Git/GitHub
 * SMTP Gmail
+* API com FastAPI
 
 ## Conceitos de POO Utilizados
 
@@ -27,6 +28,9 @@ Sistema de controle de estoque desenvolvido em Python com Orientação a Objetos
 * Geração de solicitação de compra
 * Envio automático de e-mail para fornecedor
 * Persistência em banco SQLite
+* Simula integração com outro sistema
+* Exporta arquivo JSON para integração
+* Abre API na WEB
 
 ## Estrutura
 
@@ -35,6 +39,3 @@ Sistema de controle de estoque desenvolvido em Python com Orientação a Objetos
 * services/
 * interfaces/
 
-## Autor
-
-Yruan Silveira
